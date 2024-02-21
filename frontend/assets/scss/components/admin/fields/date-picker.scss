@@ -1,0 +1,647 @@
+.ccb-input-box{
+  &.ccb-custom-date{
+    overflow: unset;
+  }
+  .ccb-custom-datetime{
+    width: 100%;
+    display: flex;
+
+    div {
+      .calc-date-picker-select {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        box-shadow: none !important;
+        outline: none !important;
+        line-height: 1 !important;
+        padding: 9px 12px;
+        border-radius: 4px;
+        border: 1px solid $greyColor;
+        background-color: $whiteColor;
+        box-sizing: border-box;
+        color: #001931;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        width: 100%;
+        min-height: 40px;
+        cursor: pointer;
+        &.error {
+          border: 2px solid $requiredColor !important;
+
+          i {
+            color: $requiredColor !important;
+            opacity: 1;
+          }
+        }
+
+        &.open {
+          border: 1px solid $iconColor;
+        }
+
+        span {
+          width: calc(100% - 15px);
+        }
+
+        i {
+          right: 11px;
+          cursor: pointer;
+          color: #001931;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.ccb-icon-close {
+            font-size: 15px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      &.date {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+
+        &.mobile {
+          cursor: pointer;
+        }
+
+        .ccb-calendar-icon{
+          &::before {
+            display: block;
+            width: 16px;
+            height: 19px;
+            content: '';
+            background-image: url('data:image/svg+xml,<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Calendar filled"><path id="Calendar filled_2" d="M0.616211 17.3694C0.616211 17.6056 0.662767 17.8395 0.753218 18.0577C0.843669 18.2759 0.976241 18.4741 1.14335 18.641C1.31046 18.8079 1.50884 18.9403 1.72713 19.0305C1.94543 19.1207 2.17936 19.1669 2.41555 19.1667H15.5902C16.0667 19.1665 16.5235 18.9771 16.8604 18.6403C17.1973 18.3034 17.3866 17.8465 17.3868 17.3701V7.18759H0.616211V17.3694ZM12.5953 10.0323C12.5957 9.91324 12.6431 9.79917 12.7273 9.71499C12.8115 9.63081 12.9256 9.58335 13.0446 9.58298H14.5421C14.6611 9.58335 14.7752 9.63081 14.8594 9.71499C14.9436 9.79917 14.991 9.91324 14.9914 10.0323V11.5298C14.991 11.6488 14.9436 11.7629 14.8594 11.8471C14.7752 11.9313 14.6611 11.9787 14.5421 11.9791H13.0446C12.9256 11.9787 12.8115 11.9313 12.7273 11.8471C12.6431 11.7629 12.5957 11.6488 12.5953 11.5298V10.0323ZM12.5953 14.8238C12.5957 14.7047 12.6431 14.5907 12.7273 14.5065C12.8115 14.4223 12.9256 14.3748 13.0446 14.3745H14.5421C14.6611 14.3748 14.7752 14.4223 14.8594 14.5065C14.9436 14.5907 14.991 14.7047 14.9914 14.8238V16.3213C14.991 16.4403 14.9436 16.5544 14.8594 16.6386C14.7752 16.7227 14.6611 16.7702 14.5421 16.7706H13.0446C12.9256 16.7702 12.8115 16.7227 12.7273 16.6386C12.6431 16.5544 12.5957 16.4403 12.5953 16.3213V14.8238ZM7.8038 10.0323C7.80417 9.91324 7.85162 9.79917 7.93581 9.71499C8.01999 9.63081 8.13406 9.58335 8.25311 9.58298H9.75268C9.87173 9.58335 9.9858 9.63081 10.07 9.71499C10.1542 9.79917 10.2016 9.91324 10.202 10.0323V11.5298C10.2016 11.6488 10.1542 11.7629 10.07 11.8471C9.9858 11.9313 9.87173 11.9787 9.75268 11.9791H8.25311C8.13406 11.9787 8.01999 11.9313 7.93581 11.8471C7.85162 11.7629 7.80417 11.6488 7.8038 11.5298V10.0323ZM7.8038 14.8238C7.80417 14.7047 7.85162 14.5907 7.93581 14.5065C8.01999 14.4223 8.13406 14.3748 8.25311 14.3745H9.75268C9.87173 14.3748 9.9858 14.4223 10.07 14.5065C10.1542 14.5907 10.2016 14.7047 10.202 14.8238V16.3213C10.2016 16.4403 10.1542 16.5544 10.07 16.6386C9.9858 16.7227 9.87173 16.7702 9.75268 16.7706H8.25311C8.13406 16.7702 8.01999 16.7227 7.93581 16.6386C7.85162 16.5544 7.80417 16.4403 7.8038 16.3213V14.8238ZM3.01231 10.0323C3.01268 9.91288 3.06042 9.79849 3.14506 9.71425C3.22969 9.63001 3.3443 9.5828 3.46371 9.58298H4.96119C5.08024 9.58335 5.19431 9.63081 5.27849 9.71499C5.36267 9.79917 5.41013 9.91324 5.4105 10.0323V11.5298C5.41013 11.6488 5.36267 11.7629 5.27849 11.8471C5.19431 11.9313 5.08024 11.9787 4.96119 11.9791H3.46371C3.3443 11.9793 3.22969 11.9321 3.14506 11.8478C3.06042 11.7636 3.01268 11.6492 3.01231 11.5298V10.0323ZM3.01231 14.8238C3.01268 14.7044 3.06042 14.59 3.14506 14.5057C3.22969 14.4215 3.3443 14.3743 3.46371 14.3745H4.96119C5.08024 14.3748 5.19431 14.4223 5.27849 14.5065C5.36267 14.5907 5.41013 14.7047 5.4105 14.8238V16.3213C5.41013 16.4403 5.36267 16.5544 5.27849 16.6386C5.19431 16.7227 5.08024 16.7702 4.96119 16.7706H3.46371C3.34466 16.7702 3.23059 16.7227 3.14641 16.6386C3.06223 16.5544 3.01477 16.4403 3.0144 16.3213L3.01231 14.8238ZM15.5902 2.3954H13.793V0.598849C13.7924 0.440195 13.7292 0.288195 13.617 0.176009C13.5048 0.0638225 13.3528 0.000552488 13.1941 0H11.9964C11.8378 0.000552488 11.6858 0.0638225 11.5736 0.176009C11.4614 0.288195 11.3981 0.440195 11.3976 0.598849V2.3954H6.6082V0.598849C6.60764 0.440195 6.54437 0.288195 6.43219 0.176009C6.32 0.0638225 6.168 0.000552488 6.00935 0H4.80885C4.6502 0.000552488 4.4982 0.0638225 4.38601 0.176009C4.27383 0.288195 4.21056 0.440195 4.21 0.598849V2.3954H2.41555C2.17936 2.39512 1.94543 2.4414 1.72713 2.5316C1.50884 2.6218 1.31046 2.75414 1.14335 2.92106C0.976241 3.08797 0.843669 3.28619 0.753218 3.50438C0.662767 3.72257 0.616211 3.95645 0.616211 4.19264V5.98919H17.3868V4.19264C17.3866 3.71623 17.1973 3.25937 16.8604 2.9225C16.5235 2.58562 16.0667 2.39628 15.5902 2.3961V2.3954Z" fill="%239FACB9"/></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+        .calendar-select {
+          display: flex;
+          flex-direction: column;
+          row-gap: 12px;
+          max-width: 100%;
+          width: 100%;
+          position: absolute;
+          min-height: 240px;
+          box-sizing: border-box;
+          border-radius: 4px;
+          top: 40px; //80px;
+          padding: 10px;
+          z-index: 100;
+          box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+          background-color: #ffffff;
+          &.show-on-top{
+            bottom: 40px;
+            top: unset;
+          }
+          &.hidden {
+            display: block !important;
+            visibility: hidden;
+            top: -9999px;
+            left: -9999px;
+          }
+
+          .month-slide-control {
+            height: 30px;
+            display: flex;
+
+            div {
+              background-color: $iconColor;
+              color: $whiteColor;
+
+              &.slider-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+                width: calc(100% - 58px);
+                height: 28px;
+                margin: 0 10px;
+                border-radius: 4px;
+                background-color: #eef1f7;
+                color: #272727;
+                font-size: 14px;
+                font-weight: 700;
+                border: 1px solid transparent;
+              }
+
+              &.next, &.prev {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 27px;
+                height: 27px;
+                border-radius: 4px;
+                background-color: #eef1f7;
+                border: 1px solid transparent;
+                cursor: pointer;
+
+                i {
+                  font-size: 9px;
+                  transition: opacity 200ms ease-in-out;
+                  color: #001931;
+                  transform: rotate(90deg);
+                  opacity: 0.5;
+                }
+
+                &.next {
+                  i {
+                    transform: rotate(-90deg);
+                  }
+                }
+
+                &:hover {
+                  i {
+                    opacity: 0.7;
+                  }
+                }
+              }
+            }
+          }
+
+          .day-list {
+            display: flex;
+            flex-direction: column;
+
+            .week-titles {
+              position: relative;
+              display: inline-flex;
+              margin-bottom: 5px;
+              width: 100%;
+
+              .title {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                box-sizing: border-box;
+                flex: 1 1 13%; /*grow | shrink | basis */
+                justify-content: center;
+                opacity: 0.5;
+                color: #001931;
+                font-size: 12px;
+                font-weight: 500;
+              }
+            }
+
+            .week {
+              display: inline-flex;
+              margin-bottom: 1px;
+              color: $iconColor;
+              width: 100%;
+              position: relative;
+              box-sizing: border-box;
+              column-gap: 2px;
+
+              .day {
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex: 1 1 13%; /*grow | shrink | basis */
+                width: 50px;
+                height: 41px;
+                color: #001931;
+                font-size: 12px;
+                font-weight: 700;
+                border-radius: 2px;
+                background-color: #eef1f7;
+                //transition: all 200ms ease-in-out;
+
+                &:before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%; /* initial ratio of 1:1*/
+                }
+
+                &:not(.day-off, .inactive):hover, &:focus {
+                  border: 1px solid $iconColor;
+                  background-color: rgba(0, 177, 99, 0.2);
+                  color: $iconColor;
+                  cursor: pointer;
+                }
+
+                &.active {
+                  //border: 1px solid $iconColor;
+                }
+
+                &.today {
+                  border: 1px solid transparent;
+                  background-color: rgba(0, 177, 99, 0.2);
+                }
+
+                &.selected {
+                  color: $whiteColor !important;
+                  border: 1px solid $iconColor !important;
+                  background-color: $iconColor !important;
+                }
+
+                &.inactive,
+                &:not(.selected).not-current-month {
+                  background-color: #eef1f7;
+                  color: rgba(0, 25, 49, 0.3);
+                  opacity: 0.3;
+                  pointer-events: none;
+                  cursor: not-allowed;
+                }
+              }
+            }
+          }
+        }
+
+        .error-tip {
+          position: absolute;
+          right: 0;
+          padding: 0px 10px;
+          height: 21px;
+          top: -24px;
+          width: max-content;
+          max-width: 100%;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: normal;
+          background-color: $requiredColor;
+          text-align: center;
+          border-radius: 6px;
+          -moz-border-radius: 6px;
+          -webkit-border-radius: 6px;
+          color: #fff;
+          display: flex;
+          align-items: center;
+
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            z-index: 10;
+            border: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid red;
+            right: 0;
+            top: 20px;
+            margin-right: 15px;
+          }
+        }
+      }
+
+      &.date {
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .calc-date-picker-select {
+            span {
+              width: 160px;
+              display: flex;
+              flex-direction: column;
+              line-height: 1.2;
+            }
+          }
+        }
+
+        @media (max-width: 430px) {
+          .calc-date-picker-select {
+            span {
+              width: 160px;
+              display: flex;
+              flex-direction: column;
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.select-with-label{
+  .ccb-custom-datetime{
+    width: 100%;
+    display: flex;
+
+    div {
+      .calc-date-picker-select {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        box-shadow: none !important;
+        outline: none !important;
+        line-height: 1 !important;
+        padding-left: 8px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: $whiteColor;
+        box-sizing: border-box;
+        color: #001931;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        &.error {
+          border: 2px solid $requiredColor !important;
+
+          i {
+            color: $requiredColor !important;
+            opacity: 1;
+          }
+        }
+
+        &.open {}
+
+        span {
+          width: calc(100% - 15px);
+        }
+
+        i {
+          right: 11px;
+          cursor: pointer;
+          color: #001931;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.ccb-icon-close {
+            font-size: 10px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      &.date {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+
+        &.mobile {
+          cursor: pointer;
+        }
+
+        .ccb-calendar-icon{
+          &::before {
+            display: block;
+            width: 16px;
+            height: 19px;
+            content: '';
+            background-image: url('data:image/svg+xml,<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Calendar filled"><path id="Calendar filled_2" d="M0.616211 17.3694C0.616211 17.6056 0.662767 17.8395 0.753218 18.0577C0.843669 18.2759 0.976241 18.4741 1.14335 18.641C1.31046 18.8079 1.50884 18.9403 1.72713 19.0305C1.94543 19.1207 2.17936 19.1669 2.41555 19.1667H15.5902C16.0667 19.1665 16.5235 18.9771 16.8604 18.6403C17.1973 18.3034 17.3866 17.8465 17.3868 17.3701V7.18759H0.616211V17.3694ZM12.5953 10.0323C12.5957 9.91324 12.6431 9.79917 12.7273 9.71499C12.8115 9.63081 12.9256 9.58335 13.0446 9.58298H14.5421C14.6611 9.58335 14.7752 9.63081 14.8594 9.71499C14.9436 9.79917 14.991 9.91324 14.9914 10.0323V11.5298C14.991 11.6488 14.9436 11.7629 14.8594 11.8471C14.7752 11.9313 14.6611 11.9787 14.5421 11.9791H13.0446C12.9256 11.9787 12.8115 11.9313 12.7273 11.8471C12.6431 11.7629 12.5957 11.6488 12.5953 11.5298V10.0323ZM12.5953 14.8238C12.5957 14.7047 12.6431 14.5907 12.7273 14.5065C12.8115 14.4223 12.9256 14.3748 13.0446 14.3745H14.5421C14.6611 14.3748 14.7752 14.4223 14.8594 14.5065C14.9436 14.5907 14.991 14.7047 14.9914 14.8238V16.3213C14.991 16.4403 14.9436 16.5544 14.8594 16.6386C14.7752 16.7227 14.6611 16.7702 14.5421 16.7706H13.0446C12.9256 16.7702 12.8115 16.7227 12.7273 16.6386C12.6431 16.5544 12.5957 16.4403 12.5953 16.3213V14.8238ZM7.8038 10.0323C7.80417 9.91324 7.85162 9.79917 7.93581 9.71499C8.01999 9.63081 8.13406 9.58335 8.25311 9.58298H9.75268C9.87173 9.58335 9.9858 9.63081 10.07 9.71499C10.1542 9.79917 10.2016 9.91324 10.202 10.0323V11.5298C10.2016 11.6488 10.1542 11.7629 10.07 11.8471C9.9858 11.9313 9.87173 11.9787 9.75268 11.9791H8.25311C8.13406 11.9787 8.01999 11.9313 7.93581 11.8471C7.85162 11.7629 7.80417 11.6488 7.8038 11.5298V10.0323ZM7.8038 14.8238C7.80417 14.7047 7.85162 14.5907 7.93581 14.5065C8.01999 14.4223 8.13406 14.3748 8.25311 14.3745H9.75268C9.87173 14.3748 9.9858 14.4223 10.07 14.5065C10.1542 14.5907 10.2016 14.7047 10.202 14.8238V16.3213C10.2016 16.4403 10.1542 16.5544 10.07 16.6386C9.9858 16.7227 9.87173 16.7702 9.75268 16.7706H8.25311C8.13406 16.7702 8.01999 16.7227 7.93581 16.6386C7.85162 16.5544 7.80417 16.4403 7.8038 16.3213V14.8238ZM3.01231 10.0323C3.01268 9.91288 3.06042 9.79849 3.14506 9.71425C3.22969 9.63001 3.3443 9.5828 3.46371 9.58298H4.96119C5.08024 9.58335 5.19431 9.63081 5.27849 9.71499C5.36267 9.79917 5.41013 9.91324 5.4105 10.0323V11.5298C5.41013 11.6488 5.36267 11.7629 5.27849 11.8471C5.19431 11.9313 5.08024 11.9787 4.96119 11.9791H3.46371C3.3443 11.9793 3.22969 11.9321 3.14506 11.8478C3.06042 11.7636 3.01268 11.6492 3.01231 11.5298V10.0323ZM3.01231 14.8238C3.01268 14.7044 3.06042 14.59 3.14506 14.5057C3.22969 14.4215 3.3443 14.3743 3.46371 14.3745H4.96119C5.08024 14.3748 5.19431 14.4223 5.27849 14.5065C5.36267 14.5907 5.41013 14.7047 5.4105 14.8238V16.3213C5.41013 16.4403 5.36267 16.5544 5.27849 16.6386C5.19431 16.7227 5.08024 16.7702 4.96119 16.7706H3.46371C3.34466 16.7702 3.23059 16.7227 3.14641 16.6386C3.06223 16.5544 3.01477 16.4403 3.0144 16.3213L3.01231 14.8238ZM15.5902 2.3954H13.793V0.598849C13.7924 0.440195 13.7292 0.288195 13.617 0.176009C13.5048 0.0638225 13.3528 0.000552488 13.1941 0H11.9964C11.8378 0.000552488 11.6858 0.0638225 11.5736 0.176009C11.4614 0.288195 11.3981 0.440195 11.3976 0.598849V2.3954H6.6082V0.598849C6.60764 0.440195 6.54437 0.288195 6.43219 0.176009C6.32 0.0638225 6.168 0.000552488 6.00935 0H4.80885C4.6502 0.000552488 4.4982 0.0638225 4.38601 0.176009C4.27383 0.288195 4.21056 0.440195 4.21 0.598849V2.3954H2.41555C2.17936 2.39512 1.94543 2.4414 1.72713 2.5316C1.50884 2.6218 1.31046 2.75414 1.14335 2.92106C0.976241 3.08797 0.843669 3.28619 0.753218 3.50438C0.662767 3.72257 0.616211 3.95645 0.616211 4.19264V5.98919H17.3868V4.19264C17.3866 3.71623 17.1973 3.25937 16.8604 2.9225C16.5235 2.58562 16.0667 2.39628 15.5902 2.3961V2.3954Z" fill="%239FACB9"/></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+        .calendar-select {
+          display: flex;
+          flex-direction: column;
+          row-gap: 12px;
+          max-width: calc(100% + 66px);
+          width: calc(100% + 66px);
+          position: absolute;
+          min-height: 240px;
+          box-sizing: border-box;
+          border-radius: 4px;
+          top: -84px;
+          left: -66px;
+          padding: 10px;
+          z-index: 100;
+          box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+          background-color: #ffffff;
+
+          &.hidden {
+            display: block !important;
+            visibility: hidden;
+            top: -9999px;
+            left: -9999px;
+          }
+
+          .month-slide-control {
+            height: 30px;
+            display: flex;
+
+            div {
+              background-color: $iconColor;
+              color: $whiteColor;
+
+              &.slider-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+                width: calc(100% - 58px);
+                height: 28px;
+                margin: 0 10px;
+                border-radius: 4px;
+                background-color: #eef1f7;
+                color: #272727;
+                font-size: 14px;
+                font-weight: 700;
+                border: 1px solid transparent;
+              }
+
+              &.next, &.prev {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 27px;
+                height: 27px;
+                border-radius: 4px;
+                background-color: #eef1f7;
+                border: 1px solid transparent;
+                cursor: pointer;
+
+                i {
+                  font-size: 9px;
+                  transition: opacity 200ms ease-in-out;
+                  color: #001931;
+                  transform: rotate(90deg);
+                  opacity: 0.5;
+                }
+
+                &.next {
+                  i {
+                    transform: rotate(-90deg);
+                  }
+                }
+
+                &:hover {
+                  i {
+                    opacity: 0.7;
+                  }
+                }
+              }
+            }
+          }
+
+          .day-list {
+            display: flex;
+            flex-direction: column;
+
+            .week-titles {
+              position: relative;
+              display: inline-flex;
+              margin-bottom: 5px;
+              width: 100%;
+
+              .title {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                box-sizing: border-box;
+                flex: 1 1 13%; /*grow | shrink | basis */
+                justify-content: center;
+                opacity: 0.5;
+                color: #001931;
+                font-size: 12px;
+                font-weight: 500;
+              }
+            }
+
+            .week {
+              display: inline-flex;
+              margin-bottom: 1px;
+              color: $iconColor;
+              width: 100%;
+              position: relative;
+              box-sizing: border-box;
+              column-gap: 2px;
+
+              .day {
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex: 1 1 13%; /*grow | shrink | basis */
+                width: 50px;
+                color: #001931;
+                font-size: 12px;
+                font-weight: 700;
+                border-radius: 2px;
+                background-color: #eef1f7;
+                //transition: all 200ms ease-in-out;
+
+                &:before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%; /* initial ratio of 1:1*/
+                }
+
+                &:not(.day-off, .inactive):hover, &:focus {
+                  border: 1px solid $iconColor;
+                  background-color: rgba(0, 177, 99, 0.2);
+                  color: $iconColor;
+                  cursor: pointer;
+                }
+
+                &.active {
+                  //border: 1px solid $iconColor;
+                }
+
+                &.today {
+                  border: 1px solid transparent;
+                  background-color: rgba(0, 177, 99, 0.2);
+                }
+
+                &.selected {
+                  color: $whiteColor !important;
+                  border: 1px solid $iconColor !important;
+                  background-color: $iconColor !important;
+                }
+
+                &.inactive,
+                &:not(.selected).not-current-month {
+                  background-color: #eef1f7;
+                  color: rgba(0, 25, 49, 0.3);
+                  opacity: 0.3;
+                  pointer-events: none;
+                  cursor: not-allowed;
+                }
+              }
+            }
+          }
+        }
+
+        .error-tip {
+          position: absolute;
+          right: 0;
+          padding: 0px 10px;
+          height: 21px;
+          top: -24px;
+          width: max-content;
+          max-width: 100%;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: normal;
+          background-color: $requiredColor;
+          text-align: center;
+          border-radius: 6px;
+          -moz-border-radius: 6px;
+          -webkit-border-radius: 6px;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          &.condition{
+            height: 30px;
+            top: -34px;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            z-index: 10;
+            border: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid red;
+            right: 0;
+            top: 20px;
+            margin-right: 15px;
+          }
+        }
+      }
+
+      &.date {
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .calc-date-picker-select {
+            span {
+              width: 160px;
+              display: flex;
+              flex-direction: column;
+              line-height: 1.2;
+            }
+          }
+        }
+
+        @media (max-width: 430px) {
+          .calc-date-picker-select {
+            span {
+              width: 160px;
+              display: flex;
+              flex-direction: column;
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

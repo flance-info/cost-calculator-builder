@@ -1,0 +1,221 @@
+.ccb-edit-field-formula {
+  overflow: auto;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  .ccb-edit-field-aliases{
+    row-gap: 6px;
+    column-gap: 6px;
+    .ccb-edit-field-aliase{
+      padding:6px;
+    }
+  }
+  .ccb-formula-content {
+    textarea {
+      border: none !important;
+    }
+    span{
+      font-size: 16px;
+      font-weight: 500;
+      // margin: 8px 2px;
+    }
+    break{
+      flex-basis: 100%;
+      width: 0px; 
+      height: 0px; 
+      overflow: hidden;
+    }
+    .ccb-cm-formula-input{
+      display: flex;
+      min-height: 120px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .cm-editor{
+      width: 100%;
+    }
+    .cm-focused{
+      outline:none;
+    }
+    .cm-scroller{
+      overflow: hidden;
+    }
+    .ccb-formula-wrapper{
+      padding: 8px 12px;
+      max-width: 100%;
+      display: flex;
+      width: 100%;
+      min-height: 64px;
+      flex-flow: row wrap;
+      // flex-wrap: wrap;
+      cursor: text;
+      // user-select: none;
+    }
+    .ccb-formula-item::selection{
+      background-color: #007bff; /* Change the background color when text is selected */
+      color: #fff; 
+    }
+    .ccb-formula-item{
+      box-sizing: border-box;
+    }
+    .ccb-formula-content-empty{
+      height:24px;
+    }
+    .ccb-formula-content-empty:after{
+      left: 2px;
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 20px;
+      background: #152736;
+      animation: blink .7s infinite; 
+    }
+    .ccb-formula-content-no-cursor-empty{
+      height:24px;
+    }
+    .ccb-formula-field-newline{
+      flex-basis: 100%;
+      width: 0px; 
+      height: 0px; 
+      overflow: hidden;
+      // height: 24px;
+      font-size: 16px; 
+    }
+    .ccb-formula-field-indent{
+      height: 24px;
+      font-size: 16px; 
+    }
+    .ccb-formula-field-letter{
+      color:#1AB163;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .ccb-formula-field-letter-not-exist{
+      color:#A6A6A6;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .ccb-formula-field-letter-total{
+      background: #DDD;
+      color:#707070;;
+      text-align: center;
+      padding: 3px 7px;
+    }
+    .ccb-formula-number{
+      padding: 0px;
+      // margin: 8px 0px;
+    }
+    .ccb-formula-operator{
+      color: #0000FF;
+    }
+    .formula-cursor{
+      position: relative;
+    }
+    .ccb-base-index{
+      padding:0;
+      margin:0;
+    }
+    .cursor-right::after{
+      // right: -2px;
+      content: "";
+      position: absolute;
+      top: 2px;
+      width: 2px;
+      height: 20px;
+      background: #152736;
+      animation: blink .7s infinite;
+    }
+    .cursor-left::after{
+      display: block;
+      cursor: text;
+      // left: -2px;
+      content: "";
+      position: absolute;
+      top: 2px;
+      width: 2px;
+      height: 20px;
+      background: #152736;
+      animation: blink .7s infinite;
+    }
+    @keyframes blink{
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: .5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ccb-formula-tools {
+    padding: 6px 7px;
+    background-color: #eef1f7;
+    border-top: 1px solid #dddddd;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+
+    .ccb-formula-tool {
+      letter-spacing: normal;
+      cursor: pointer;
+      height: 30px;
+      display: flex;
+      padding: 0 9px;
+      color: #001931;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+      transition: background-color 200ms linear;
+      // -webkit-user-select: none; /* Safari */
+      // -ms-user-select: none; /* IE 10 and IE 11 */
+      // user-select: none; 
+
+      .multiple,
+      .plus {
+        line-height: 1;
+        position: relative;
+        top: -1px;
+        left: 0.5px;
+      }
+
+      .multiple {
+        top: 3px;
+        left: 1px;
+      }
+
+      &:hover {
+        background-color: #d2d8e5;
+      }
+    }
+  }
+}
+
+.ccb-documentation-link{
+  color: #1AB163;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; 
+  text-decoration: none;
+}
+.ccb-documentation-link:hover{
+  color: #1AB163;
+  text-decoration: none;
+}
+.ccb-documentation-link:focus{
+  color: #1AB163;
+}
+.ccb-formula-error-message{
+  color:#D94141;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}

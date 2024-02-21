@@ -1,0 +1,149 @@
+.ccb-card-payments {
+  max-width: 960px;
+  border: 1px solid #DDDDDD;
+  height: 100%;
+  margin: 20px 0;
+
+  .ccb-card-payment {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    &-title {
+      width: 190px;
+
+      .list-header {
+        display: flex;
+        padding-left: 10px;
+      }
+    }
+
+    &-border {
+      width: 1px;
+      height: 38px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      background-color: #dddddd;
+    }
+
+    &-status {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 10px;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      button {
+        padding: 11px 16px !important;
+        height: 40px;
+        font-weight: 500;
+
+        i {
+          font-size: 16px;
+        }
+      }
+
+      &__item {
+        &:last-child {
+          display: flex;
+          align-items: center;
+          column-gap: 15px;
+
+          .ccb-integrated {
+            color: #001931;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          .ccb-not-integrated {
+            color: #9196A1;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ccb-card-global-settings {
+  border-radius: 40px;
+  background: rgba(26, 177, 99, 0.10);
+  padding: 8px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  column-gap: 7px;
+
+
+  i  {
+    font-size: 9px;
+    color: #1AB163;
+  }
+
+  span {
+    color: #1AB163;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+.ccb-grid-box {
+  &.paypal {
+    .paypal-fields {
+      padding-left: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      
+      max-width: 800px;
+
+      &-item {
+        width: 30%;
+
+        input {
+          @media (max-width: 782px) {
+            height: 38px;
+          }
+        }
+
+        select {
+          height: 42px;
+
+          @media (max-width: 1800px) {
+            height: 40px;
+          }
+
+          @media (max-width: 1550px) {
+            height: 38px;
+          }
+
+          @media (max-width: 1320px) {
+            height: 37px;
+          }
+        }
+
+        @media (max-width: 991px) {
+          width: 45%;
+        }
+
+        &:last-child {
+          @media (max-width: 991px) {
+            margin-top: 10px;;
+          }
+        }
+      }
+    }
+  }
+
+}

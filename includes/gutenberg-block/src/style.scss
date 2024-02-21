@@ -1,0 +1,14 @@
+.ccb-gutenberg-block {
+	padding: 20px;
+	border: 1px solid black;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	&__icon {
+		margin-right: 20px;
+	}
+}

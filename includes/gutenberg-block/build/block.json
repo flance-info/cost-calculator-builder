@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cost-calculator-builder/calculator-selector",
+  "version": "0.1.0",
+  "title": "Cost Calculator Builder",
+  "category": "widgets",
+  "description": "Insert a calculator form you have created with Cost Calculator Builder.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "calculator": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "textdomain": "cost-calculator-builder",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

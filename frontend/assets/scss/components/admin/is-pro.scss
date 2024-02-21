@@ -1,0 +1,113 @@
+.ccb-is-pro {
+  $main: &;
+  padding: 24px 30px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  width: 100%;
+
+  #{$main}__label {
+    color: #001931;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 18px;
+  }
+
+  #{$main}__container {
+    max-width: 657px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #E3E6EC;
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+
+    #{$main}__header {
+      border-bottom: 1px solid #DFE2EA;;
+      padding: 20px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      #{$main}__action {
+        display: flex;
+        height: 40px;
+      }
+
+      #{$main}__title-box {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        #{$main}__icon-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: rgba(0, 177, 99, 0.10);
+
+          //i {
+          //  font-size: 18px;
+          //}
+        }
+
+        #{$main}__text {
+          color: #001931;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 26px;
+        }
+      }
+    }
+
+    #{$main}__content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 23px;
+      padding: 30px 21px 23px;
+
+      &-info-box {
+        &-list {
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+
+          span {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+
+            span {
+              color: #000;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+
+      &-image-box {
+        background: #F4F4F4;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 22px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

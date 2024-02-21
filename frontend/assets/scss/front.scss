@@ -1,0 +1,108 @@
+@import 'components/variables';
+@import 'components/admin/components/loader';
+@import 'components/frontend/partials/payments';
+@import 'components/frontend/partials/send-form';
+@import 'components/frontend/calc-wrap';
+@import 'components/frontend/fields/index';
+@import 'components/admin/components/ccb-notice';
+@import 'components/frontend/partials/loaders';
+@import 'components/frontend/partials/invoice';
+@import 'components/frontend/partials/thank-you-page';
+@import 'components/frontend/partials/ccb-modal';
+@import 'components/frontend/partials/ccb-hint';
+
+.product-name {
+  dt {
+    float: unset !important;
+  }
+}
+
+.is-pro {
+  display: none;
+}
+
+.ccb-hr {
+  display: flex;
+  justify-content: center;
+}
+
+.calc-subtotal-wrapper {
+  @media screen and (max-width: 768px) {
+    position: unset !important;
+    transform: unset !important;
+    width: 100% !important;
+  }
+
+}
+
+.modal-body {
+  .ccb-summary-sticky {
+    top: 0 !important;
+  }
+}
+
+
+.ccb-custom-scrollbar {
+  /* Scrollbar Styling */
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &.ccb-scroll-hide {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    transition: 300ms ease;
+    background-color: transparent;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    transition: 300ms ease;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: transparent;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      background-color: #ebebeb;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      background: #808c97;
+    }
+  }
+
+
+  &.large {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.calc-textarea-box{
+  position: relative;
+}
+.calc-textarea {
+  resize: none;
+  outline: none;
+
+  &:focus {
+    border-color: #00b163;
+  }
+}
+
+.calc-html-textarea textarea {
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 10px 20px;
+    resize: scroll;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    min-height: 80px;
+    border-radius: 4px;
+    border: 1px solid #dddddd !important;
+    background-color: #ffffff;
+}
+
+.calc-html-textarea .ccb-input-label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #001931;
+    font-size: 12px;
+    font-weight: 700;
+}

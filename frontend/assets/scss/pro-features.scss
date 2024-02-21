@@ -1,0 +1,221 @@
+@import 'components/admin/components/ccb-header';
+@import 'components/admin/partials/feedback';
+@import 'components/admin/components/button';
+
+
+#wpcontent {
+  background-color: #D2D8E5;
+  padding: 0 18px;
+}
+
+#wpwrap {
+  background-color: #D2D8E5;
+}
+
+.ccb-pro-features-container {
+  font-family: "Eudoxus Sans";
+}
+
+.ccb-pro-features-header {
+  margin-bottom: 20px;
+}
+
+.ccb-pro-features-action-block {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: normal;
+  padding: 50px 0;
+  margin-bottom: 10px;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+    .green {
+      color: #1AB163;
+      font-weight: 700;
+    }
+
+    .black {
+      color: #001931;
+      font-weight: 700;
+    }
+  }
+
+  &__features {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(26, 177, 99, 0.10);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: #1AB163;
+      margin-right: 10px;
+    }
+
+    .label {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: #4D5E6F
+    }
+  }
+
+  &__button {
+    a {
+      display: flex;
+      align-items: center;
+      padding: 11px 20px;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      background-color: #1AB163;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 300ms ease;
+      outline: none;
+      box-shadow: none;
+
+      &:visited, &:focus, &:active {
+        outline: none;
+      }
+
+      i {
+        margin-right: 10px;
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        background-color: #149753;
+      }
+    }
+  }
+}
+
+.ccb-pro-features-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  max-width: 1240px;
+  margin: 10px auto;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ccb-pro-features-block {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    max-width: 406px;
+    min-height: 170px;
+
+    &__icon {
+      width: 77px;
+      margin-right: 20px;
+
+      span {
+        background: rgba(26, 177, 99, 0.10);
+        color: #1AB163;
+        font-size: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 77px;
+        height: 77px;
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: #001931;
+    }
+
+    &__description {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      color: #4D5E6F;
+    }
+
+    &__link {
+      a {
+        display: flex;
+        align-items: center;
+        color: #1AB163;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+        outline: none;
+        transition: 300ms ease;
+        border: none;
+        box-shadow: none;
+
+        span {
+          margin-right: 5px;
+        }
+
+        &:focus, &:visited, &:active {
+          outline: none;
+        }
+
+        &:hover {
+          color: #149753;
+        }
+      }
+    }
+
+    &.soon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #001931;
+      }
+    }
+  }
+}

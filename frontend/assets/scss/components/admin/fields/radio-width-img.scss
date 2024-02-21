@@ -1,0 +1,17 @@
+.ccb-radio-width-img {
+  padding: 17px;
+  border-radius: 6px;
+  border: 2px solid #dddddd;
+  max-width: 264px;
+  cursor: pointer;
+
+  &__attachment {
+    img {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    border-color: #1AB163;
+  }
+}

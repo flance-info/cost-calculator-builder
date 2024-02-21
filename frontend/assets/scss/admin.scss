@@ -1,0 +1,243 @@
+@import 'components/variables';
+@import 'components/admin/components/ccb-texts';
+@import 'components/admin/components/ccb-header';
+@import 'components/admin/components/loader';
+@import 'components/admin/partials/tooltip';
+@import "components/admin/partials/email-template-preview";
+
+@import 'components/admin/partials/confirm-popup';
+@import 'components/admin/partials/modal';
+@import 'components/admin/partials/mobile-preview';
+@import 'components/admin/partials/feedback';
+@import 'components/admin/orders';
+@import 'components/admin/partials/demo-import';
+@import 'components/admin/partials/toast';
+@import 'components/admin/fields/index';
+
+@import 'components/admin/components/ccb-grid';
+@import 'components/admin/components/indention';
+@import 'components/admin/components/calculator-tab';
+@import 'components/admin/components/short-code';
+@import 'components/admin/components/custom-fields';
+@import 'components/admin/components/edit-formula';
+@import 'components/admin/components/add-options';
+@import 'components/admin/components/button';
+@import 'components/admin/components/ccb-notice';
+@import 'components/admin/components/back-to';
+@import 'components/admin/components/extended';
+@import 'components/admin/main';
+@import 'components/admin/components/table';
+@import 'components/admin/appearance/appearance';
+@import 'components/admin/appearance/accardion';
+@import 'components/admin/components/embed-popup';
+@import 'components/admin/components/history';
+@import 'components/admin/is-pro';
+
+@import 'components/admin/condition';
+@import 'components/admin/quick-tour';
+@import 'components/admin/styles';
+@import 'components/frontend/partials/invoice';
+@import 'components/admin/settings/payment-gateway';
+
+.ccb-settings-in-pro {
+  margin-top: 20px;
+  background: #FFFFFF ;
+  border: 1px solid #F47424;
+  border-radius: 10px;
+  opacity: 1;
+  position: relative;
+  width: 380px;
+  height: 60px;
+  display: flex;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  &-container {
+    opacity: 0.7;
+    pointer-events: none;
+    display: flex;
+    align-content: center;
+  }
+
+  &-lock {
+    width: 44px;
+    height: 18px;
+    background-color: #F47424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 12;
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
+    text-decoration: none !important;
+    outline: none !important;
+    cursor: pointer;
+
+    i, span {
+      color: #fff !important;
+    }
+
+    i {
+      font-size: 11px;
+    }
+
+    span {
+      font-size: 9px;
+      font-weight: bold;
+    }
+  }
+}
+
+#ccb_summary_sticky {
+  position: sticky;
+  top: 0;
+}
+
+.ccb-field-title {
+	display: inline-block;
+	margin-bottom: 5px;
+	color: #001931;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+
+#test_app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  overflow: hidden;
+  height: 800px;
+  .tool-wrapper {
+    position: relative;
+  }
+
+  .flowchart-container {
+    margin: 0;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+    svg {
+      cursor: grab;
+    }
+  }
+
+  g {
+    cursor: pointer;
+  }
+
+  $themeColor: rgb(255, 136, 85);
+  $portSize: 12;
+
+  .flowchart-node {
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    box-sizing: border-box;
+    border: none;
+    background: white;
+    z-index: 1;
+    opacity: .9;
+    cursor: move;
+    transform-origin: top left;
+    .node-main {
+      text-align: center;
+      .node-type {
+        background: $themeColor;
+        color: white;
+        font-size: 13px;
+        padding: 6px;
+      }
+      .node-label {
+        font-size: 13px;
+      }
+    }
+    .node-port {
+      position: absolute;
+      width: #{$portSize}px;
+      height: #{$portSize}px;
+      left: 50%;
+      transform: translate(-50%);
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      background: white;
+      &:hover {
+        background: $themeColor;
+        border: 1px solid $themeColor;
+      }
+    }
+    .node-input {
+      top: #{-2+$portSize/-2}px;
+    }
+    .node-output {
+      bottom: #{-2+$portSize/-2}px;
+    }
+    .node-delete {
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+      color: $themeColor;
+      cursor: pointer;
+      background: white;
+      border: 1px solid $themeColor;
+      border-radius: 100px;
+      text-align: center;
+      &:hover{
+        background: $themeColor;
+        color: white;
+      }
+    }
+  }
+  .selected {
+    box-shadow: 0 0 0 2px $themeColor;
+  }
+}
+
+.ccb-fields-required {
+  width: 19px;
+  height: 19px;
+  border-radius: 50px;
+  background-color: #d94141;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative !important;
+  left: 6px !important;
+
+  line-height: 1 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.ccb-disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+
+.plugin-install-ccb_pro_features {
+  a::before {
+    content: '';
+    background: url('../../dist/img/calc.svg');
+    background-size: contain;
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    margin: 0 4px -3px 0;
+  }
+}

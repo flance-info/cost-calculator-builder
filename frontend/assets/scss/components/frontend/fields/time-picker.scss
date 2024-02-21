@@ -1,0 +1,278 @@
+.condition-item {
+  .time-picker-overlay {
+	display: none;
+  }
+
+  .vue__time-picker .dropdown ul li {
+	color: #161616 !important;
+	background: #fff !important;
+
+	&.active, &:hover {
+	  background: #41b883 !important;
+	  color: white !important;
+	}
+  }
+  .vue__time-picker .dropdown {
+	background: #fff !important;
+  }
+}
+
+.vue__time-picker-dropdown .hint, .vue__time-picker .dropdown .hint {
+  display: none;
+}
+
+.ccb-time-picker.calc-field-disabled-condition {
+  .vue__time-picker .controls {
+	.clear-btn {
+	  pointer-events: none;
+	}
+  }
+}
+
+.ccb-time-picker {
+  .vue__time-picker-dropdown, .vue__time-picker .dropdown {
+	top: auto;
+  }
+}
+
+.ccb-field.required .ccb-time-picker-wrapper {
+  border-color: #D94141 !important;
+}
+
+.ccb-time-picker-wrapper {
+  &:focus {
+	border-color: black;
+  }
+}
+
+.ccb-modal-wrapper .modal-window .modal-body .condition-item .action .custom-input-date .vue__time-picker .dropdown {
+  position: absolute !important;
+  right: auto !important;
+}
+
+.vue__time-picker ul.hours::-webkit-scrollbar, .vue__time-picker ul.minutes::-webkit-scrollbar {
+  display: none;
+}
+
+.ccb-empty-label {
+  opacity: 0;
+}
+span.ccb-error-tip.front.default.active.hidden {
+  display: none;
+}
+
+.ccb-time-picker {
+  position: relative;
+
+  .ccb-error-tip {
+	&.default {
+	  bottom: 55px;
+	  @media (max-width: 1023px) {
+		right: 120px;
+	  }
+	}
+
+	&:after {
+	  left: 10px;
+	}
+  }
+
+  .error-tip {
+
+	&:after {
+	  left: 70px;
+	}
+  }
+
+  .ccb-time-picker-no-range {
+	left: 8rem;
+  }
+
+  span.error-tip {
+	position: absolute;
+	right: 13px;
+	padding: 5px 10px;
+	height: 25px;
+	top: -31px;
+	width: max-content;
+	max-width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: normal;
+	background-color: $requiredColor;
+	text-align: center;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+
+	&::after {
+	  content: '';
+	  width: 0;
+	  height: 0;
+	  display: block;
+	  position: absolute;
+	  z-index: 10;
+	  border: 0;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	  border-top: 6px solid $requiredColor;
+	  right: 0;
+	  top: 24px;
+	  margin-right: 15px;
+	}
+
+	@media (max-width: 1023px) {
+	  right: 100px;
+	}
+  }
+
+  .ccb-time-picker-wrapper {
+	position: relative;
+
+	.dropdownBasic {
+	  .controls {
+		.dropdown-btn {
+		  display: none;
+		}
+	  }
+	}
+
+	.dropdownStart {
+	  .controls {
+		.dropdown-btn {
+		  display: none;
+		}
+	  }
+	}
+
+	.dropdownEnd {
+	  .controls {
+		.dropdown-btn {
+		  display: none;
+		}
+	  }
+	}
+
+	--value-background: var(--primary-color);
+	--value-background-hover: var(--primary-color);
+
+	.ccb-time-picker-range {
+	  display: flex;
+
+	  .vue__time-picker input.display-time {
+		width: 100%;
+	  }
+
+	  .separator {
+		width: 47px;
+		min-height: 44px;
+		height: auto;
+		flex-shrink: 0;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 26px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-right-width: 1px;
+		border-left-width: 1px;
+		border-color: var(--common-colors-gray-3-dddddd, #DDD);
+		border-style: solid;
+		border-top-width: 0;
+		border-bottom-width: 0;
+		background: var(--common-colors-background-eef-1-f-7, #EEF1F7);
+		font-family: "Eudoxus Sans", sans-serif;
+	  }
+	}
+  }
+
+  .ccb-time-picker-wrapper {
+	i.ccb-icon-timepicker-light-clock {
+	  font-size: 22px;
+	  opacity: 0.5;
+
+	  &:hover {
+		opacity: 0.8;
+	  }
+	}
+
+	.vue__time-picker .controls .char {
+	  font-size: 22px;
+	  opacity: 0.5;
+	  padding-top: 1px;
+
+	  &:hover {
+		opacity: 0.8;
+	  }
+	}
+
+	&.focused {
+	  border-color: var(--value-background) !important;
+	}
+
+	.vue__time-picker input.display-time {
+	  width: 10rem;
+	  cursor: pointer;
+	  border: none !important;
+	  @media(max-width: 1280px) {
+		width: 120px;
+	  }
+	}
+
+	.vue__time-picker .controls > * {
+	  padding: 0 10px;
+	}
+
+	.vue__time-picker {
+	  width: 100%;
+	  font-size: 16px;
+
+	  input {
+		display: flex;
+		padding: 9px 11px 9px 15px !important;
+		align-items: center;
+		gap: 10px;
+		flex-shrink: 0;
+		background: var(--calculator-colors-white, #FFF);
+		font-family: "Eudoxus Sans", sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 26px;
+		height: 44px;
+		min-height: 44px !important;
+		margin-bottom: 0;
+	  }
+
+	  .dropdown ul li:not([disabled]).active {
+		background: var(--value-background);
+
+		&:hover {
+		  background: var(--value-background-hover);
+		}
+	  }
+	}
+
+	.vue__time-picker .controls img {
+	  width: 22px;
+	  max-width: 22px;
+	}
+  }
+}
+
+.wp-admin {
+  .ccb-time-picker-wrapper .vue__time-picker input, .ccb-time-picker-wrapper .ccb-time-picker-range .separator {
+	min-height: 40px;
+  }
+}
+
+.modal-window.preview {
+  .ccb-time-picker .ccb-time-picker-wrapper .vue__time-picker .time-picker-overlay {
+	width: 750px;
+	margin-left: -20px;
+  }
+}
